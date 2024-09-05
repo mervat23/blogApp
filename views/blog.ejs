@@ -1,0 +1,21 @@
+<%- include('header.ejs') %>
+<%- include('modals.ejs') %>
+<!-- card -->
+ <div class="container">
+    <div class="row">
+        <div class="col-md-12 m-3">
+            <h1> Blog By Title</h1>
+            <a href="/getAllBlogs" type="button" class="btn btn-success" >Home</a>
+        </div>
+        <div class="card col-md-3 ml-3 mb-3" style="width: 18rem;">
+            <div class="card-body">
+                <h5 class="card-title" id="title<%= blog.id %>"><%= blog.title %></h5>
+                <p class="card-text" id="content<%= blog.id %>"><%= blog.content %></p>
+                <a onclick="getBlogId('<%= blog.id %>')" data-toggle="modal" data-target="#editBlogModal" class="card-link btn btn-info">Edit</a>
+                <a onclick="getBlogIdToDelete('<%= blog.id %>')" data-toggle="modal" data-target="#deleteBlogModal" class="card-link btn btn-danger">Delete</a>              
+            </div>
+          </div>
+    </div>
+    </div>
+    
+    <%- include('footer.ejs') %>
